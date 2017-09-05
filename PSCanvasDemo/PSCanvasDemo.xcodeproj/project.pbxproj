@@ -78,14 +78,9 @@
 				E2E50A771F37562A00D1EDF8 /* ViewController.m */,
 				E2E50A891F3756E000D1EDF8 /* SignatureView.h */,
 				E2E50A8A1F3756E000D1EDF8 /* SignatureView.m */,
-				E2E50A901F37647A00D1EDF8 /* UIView+HYBAnimation.h */,
-				E2E50A8F1F37647A00D1EDF8 /* UIView+HYBAnimation.m */,
-				E2E50A961F37693D00D1EDF8 /* UIView+Frame.h */,
-				E2E50A971F37693D00D1EDF8 /* UIView+Frame.m */,
-				E2E50A921F37651A00D1EDF8 /* Alert.h */,
-				E2E50A931F37651A00D1EDF8 /* Alert.m */,
-				E2E50A951F37678500D1EDF8 /* PrefixHeader.pch */,
 				E2E50A8B1F3756E000D1EDF8 /* PSCanvasView */,
+				E2F629511F5EE87D00C8584D /* Utils */,
+				E2E50A951F37678500D1EDF8 /* PrefixHeader.pch */,
 				E2E50A7C1F37562A00D1EDF8 /* Assets.xcassets */,
 				E2E50A7E1F37562A00D1EDF8 /* LaunchScreen.storyboard */,
 				E2E50A811F37562A00D1EDF8 /* Info.plist */,
@@ -101,6 +96,19 @@
 				E2E50A8D1F3756E000D1EDF8 /* PSCanvasView.m */,
 			);
 			path = PSCanvasView;
+			sourceTree = "<group>";
+		};
+		E2F629511F5EE87D00C8584D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E2E50A901F37647A00D1EDF8 /* UIView+HYBAnimation.h */,
+				E2E50A8F1F37647A00D1EDF8 /* UIView+HYBAnimation.m */,
+				E2E50A961F37693D00D1EDF8 /* UIView+Frame.h */,
+				E2E50A971F37693D00D1EDF8 /* UIView+Frame.m */,
+				E2E50A921F37651A00D1EDF8 /* Alert.h */,
+				E2E50A931F37651A00D1EDF8 /* Alert.m */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
