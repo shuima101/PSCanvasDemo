@@ -1,0 +1,23 @@
+//
+//  PrefixHeader.pch
+//  PSCanvasDemo
+//
+//  Created by Passing on 2017/8/6.
+//  Copyright © 2017年 passing. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "UIView+Frame.h"
+
+
+#define kLightBlueColor [UIColor colorWithRed:29./255. green:132./255. blue:250./255. alpha:1.0]
+#define screenHeight [UIScreen mainScreen].bounds.size.height
+#define screenWidth [UIScreen mainScreen].bounds.size.width
+#define kWidthScale screenWidth/375.0
+
+#endif /* PrefixHeader_pch */
