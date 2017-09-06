@@ -50,7 +50,7 @@
         [self showAlert:message];
         return;
     }
-    [self showAlert:message toView:view center:CGPointMake(view.width/2.0, view.height/2.0)];
+    [self showAlert:message toView:view center:CGPointMake(view.bounds.size.width/2.0, view.bounds.size.height/2.0)];
 }
 
 +(void)showAlert:(NSString *)message toView:(UIView *)view center:(CGPoint)center

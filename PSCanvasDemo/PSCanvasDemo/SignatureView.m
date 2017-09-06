@@ -51,11 +51,11 @@
     [self addSubview:_titleLb];
     
     UIButton *cancelBtn = [UIButton buttonWithType:0];
-    [cancelBtn setTitle:@"重写" forState:UIControlStateNormal];
+    [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
     cancelBtn.titleLabel.font = [UIFont systemFontOfSize:17];
     [cancelBtn setTitleColor:kLightBlueColor forState:UIControlStateNormal];
     cancelBtn.frame = CGRectMake(10, 10, 80, titleHeigh-20);
-    [cancelBtn addTarget:self action:@selector(clearAllPaths) forControlEvents:UIControlEventTouchUpInside];
+    [cancelBtn addTarget:self action:@selector(cancelSignature) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:cancelBtn];
     
     UIButton *completeBtn = [UIButton buttonWithType:0];
@@ -66,28 +66,28 @@
     [completeBtn addTarget:self action:@selector(completeSignature:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:completeBtn];
     
-//    CGFloat clearBtnHeight = (self.height-titleHeigh)/2.0;
-//    CGFloat clearBtnWidth = 60;
-//
-//    UIButton *backBtn = [UIButton buttonWithType:0];
-//    backBtn.backgroundColor = [UIColor whiteColor];
-//    [backBtn setTitleColor:[UIColor hyb_btnColorRed] forState:UIControlStateNormal];
-////    [backBtn setImage:[UIImage imageNamed:@"xpay_icon_back"] forState:UIControlStateNormal];
-//    [backBtn setTitle:@"撤销" forState:UIControlStateNormal];
-//    backBtn.frame = CGRectMake(self.width - clearBtnWidth, titleHeigh, clearBtnWidth, clearBtnHeight-0.5);
-//    backBtn.imageEdgeInsets = UIEdgeInsetsMake(15, 15, 10, 10);
-//    [backBtn addTarget:self action:@selector(signatureBack) forControlEvents:UIControlEventTouchUpInside];
-//    [self addSubview:backBtn];
-//
-//    UIButton *clearBtn = [UIButton buttonWithType:0];
-//    clearBtn.backgroundColor = [UIColor whiteColor];
-//    [clearBtn setTitleColor:[UIColor hyb_btnColorRed] forState:UIControlStateNormal];
-//
-////    [clearBtn setImage:[UIImage imageNamed:@"xpay_icon_back"] forState:UIControlStateNormal];
-//    [clearBtn setTitle:@"清空" forState:UIControlStateNormal];
-//    clearBtn.frame = CGRectMake(self.width - clearBtnWidth, backBtn.bottom+1.0, clearBtnWidth, clearBtnHeight);
-//    [clearBtn addTarget:self action:@selector(clearAllPaths) forControlEvents:UIControlEventTouchUpInside];
-//     [self addSubview:clearBtn];
+    CGFloat clearBtnHeight = (self.height-titleHeigh)/2.0;
+    CGFloat clearBtnWidth = 60;
+
+    UIButton *backBtn = [UIButton buttonWithType:0];
+    backBtn.backgroundColor = [UIColor whiteColor];
+    [backBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+//    [backBtn setImage:[UIImage imageNamed:@"xpay_icon_back"] forState:UIControlStateNormal];
+    [backBtn setTitle:@"撤销" forState:UIControlStateNormal];
+    backBtn.frame = CGRectMake(self.width - clearBtnWidth, titleHeigh, clearBtnWidth, clearBtnHeight-0.5);
+    backBtn.imageEdgeInsets = UIEdgeInsetsMake(15, 15, 10, 10);
+    [backBtn addTarget:self action:@selector(signatureBack) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:backBtn];
+
+    UIButton *clearBtn = [UIButton buttonWithType:0];
+    clearBtn.backgroundColor = [UIColor whiteColor];
+    [clearBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+
+//    [clearBtn setImage:[UIImage imageNamed:@"xpay_icon_back"] forState:UIControlStateNormal];
+    [clearBtn setTitle:@"清空" forState:UIControlStateNormal];
+    clearBtn.frame = CGRectMake(self.width - clearBtnWidth, backBtn.bottom+1.0, clearBtnWidth, clearBtnHeight);
+    [clearBtn addTarget:self action:@selector(clearAllPaths) forControlEvents:UIControlEventTouchUpInside];
+     [self addSubview:clearBtn];
 }
 
 +(void)showWithTitle:(NSString *)title completion:(void(^)(UIImage *img))completion
@@ -99,16 +99,16 @@
     [signView rotateShowAnimationWithAngle:M_PI_2 duration:0.3];
 }
 
-//-(void)cancelSignature
-//{
-//    [self.canvas clearAllPaths];
-//    [self endShow];
-//}
-//
-//-(void)signatureBack
-//{
-//    [self.canvas back];
-//}
+-(void)cancelSignature
+{
+    [self.canvas clearAllPaths];
+    [self endShow];
+}
+
+-(void)signatureBack
+{
+    [self.canvas back];
+}
 
 -(void)clearAllPaths
 {
@@ -118,7 +118,7 @@
 -(void)completeSignature:(UIButton *)btn
 {
     if (self.canvas.pathCount < 1) {
-        [Alert showAlert:@"您还没有签名" toView:self center:CGPointMake(self.bounds.size.height/2., self.bounds.size.width/2.)];
+        [Alert showAlert:@"您还没有签名" toView:self];
         return;
     }
     UIImage *signImg = self.canvas.snapImage;
@@ -140,11 +140,11 @@
 {
     if (error == nil)
     {
-        [Alert showAlert:@"已保存" toView:self center:CGPointMake(self.bounds.size.height/2., self.bounds.size.width/2.)];
+        [Alert showAlert:@"已保存"];
     }
     else
     {
-        [Alert showAlert:@"未能保存到相册" toView:self center:CGPointMake(self.bounds.size.height/2., self.bounds.size.width/2.)];
+        [Alert showAlert:@"未能保存到相册"];
     }
 }
 

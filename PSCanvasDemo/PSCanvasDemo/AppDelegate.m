@@ -18,10 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-    ViewController *vc = [ViewController new];
-    window.rootViewController = vc;
-    [window makeKeyAndVisible];
+    _window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    ViewController *vc = [[ViewController alloc] init];
+    _window.rootViewController = vc;
+    [_window makeKeyAndVisible];
     
     return YES;
 }

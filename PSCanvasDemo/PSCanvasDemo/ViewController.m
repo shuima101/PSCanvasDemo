@@ -18,6 +18,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor cyanColor];
+    
     UILabel *tipLb = [UILabel new];
     tipLb.font = [UIFont systemFontOfSize:16.];
     tipLb.textAlignment = NSTextAlignmentCenter;

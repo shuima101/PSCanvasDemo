@@ -316,6 +316,7 @@
 				DEVELOPMENT_TEAM = ALYV3JUZ5D;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PSCanvasDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = PSCanvasDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuima.PSCanvasDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -330,6 +331,7 @@
 				DEVELOPMENT_TEAM = ALYV3JUZ5D;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/PSCanvasDemo/PrefixHeader.pch";
 				INFOPLIST_FILE = PSCanvasDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shuima.PSCanvasDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
